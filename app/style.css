@@ -1,0 +1,96 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #0b0014;
+  color: #f5eefc;
+}
+.topbar { padding: 20px 28px 8px; }
+.topbar h1 {
+  margin: 0;
+  font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  font-size: 30px;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #ffe259, #ffa751, #ff2e88);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.topbar p { margin: 6px 0 0; color: #cdb8e0; max-width: 720px; }
+.app {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  padding: 16px 28px 32px;
+  align-items: start;
+}
+.controls h2 { font-size: 15px; margin: 22px 0 8px; color: #ffb3d9; }
+.controls h2:first-child { margin-top: 0; }
+.hint { color: #b9a3cc; font-size: 13px; line-height: 1.5; margin: 6px 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  border: 1px solid #5b3a75;
+  background: #1c0a2e;
+  color: #f5eefc;
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.chip[aria-pressed="true"] { background: #ff2e88; border-color: #ff2e88; color: #fff; }
+label { display: block; margin: 10px 0; font-size: 13px; color: #e8d5f5; }
+input[type="text"] {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #5b3a75;
+  background: #1c0a2e;
+  color: #fff;
+  font-size: 15px;
+}
+input[type="range"] { width: 100%; accent-color: #ff2e88; }
+.upload {
+  display: block;
+  margin: 12px 0;
+  padding: 12px;
+  border: 1px dashed #ff2e88;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.upload input { display: none; }
+button { font-family: inherit; }
+.exports { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.exports button, .ghost {
+  border: 1px solid #5b3a75;
+  background: #241038;
+  color: #f5eefc;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.exports button.primary {
+  background: linear-gradient(90deg, #ff7a18, #ff2e88);
+  border: none;
+  font-weight: 700;
+  color: #fff;
+}
+#status { margin-top: 14px; font-size: 13px; color: #9fe8ff; min-height: 18px; }
+.preview { position: sticky; top: 16px; }
+#cover {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 12px 48px rgba(255, 46, 136, 0.25);
+  background: #16001f;
+  cursor: grab;
+}
+#cover:active { cursor: grabbing; }
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; }
+  .preview { position: static; }
+}

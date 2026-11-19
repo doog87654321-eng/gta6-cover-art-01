@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice City Cover Maker — photo to poster cover art</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>Vice City Cover Maker</h1>
+  <p>Turn your photo and a caption into a multi-panel poster cover — sunset, neon or noir — and export a PNG to share.</p>
+</header>
+<main class="app">
+  <section class="controls" aria-label="Cover controls">
+    <h2>1 · Pick a layout</h2>
+    <div id="layouts" class="chips"></div>
+
+    <h2>2 · Add photos</h2>
+    <p class="hint" id="panelLabel">Panel 1 — no photo yet</p>
+    <div id="samples" class="chips"></div>
+    <label class="upload">Upload your own photo
+      <input id="upload" type="file" accept="image/*">
+    </label>
+    <p class="hint">Photos are read on your machine and never uploaded. Click a panel in the preview to select it, drag to pan, scroll to zoom.</p>
+    <label>Zoom <span id="zoomValue">1.0x</span>
+      <input id="zoom" type="range" min="1" max="3" step="0.1" value="1">
+    </label>
+    <button id="resetPan" type="button" class="ghost">Reset pan &amp; zoom</button>
+
+    <h2>3 · Caption</h2>
+    <label>Title
+      <input id="title" type="text" maxlength="24" value="Sunset Heist">
+    </label>
+    <label>Subtitle
+      <input id="subtitle" type="text" maxlength="32" value="Neon Nights">
+    </label>
+
+    <h2>4 · Colour grade</h2>
+    <div id="grades" class="chips"></div>
+
+    <h2>5 · Size &amp; export</h2>
+    <div id="sizes" class="chips"></div>
+    <div class="exports">
+      <button id="export" type="button" class="primary">Export PNG</button>
+      <button id="exportSquare" type="button">1080 x 1080</button>
+      <button id="exportPortrait" type="button">1080 x 1350</button>
+      <button id="exportWide" type="button">1920 x 1080</button>
+    </div>
+    <p id="status" role="status">Loading sample photos…</p>
+  </section>
+  <section class="preview" aria-label="Live preview">
+    <canvas id="cover" width="1920" height="1080" aria-label="Live cover preview"></canvas>
+    <p class="hint">Live preview — what you see is the PNG you export. Original art only: no game logos, artwork or fonts are used.</p>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
